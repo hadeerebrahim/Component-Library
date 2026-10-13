@@ -1,0 +1,120 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+.component-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px;
+}
+
+button,
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #2457c5;
+    color: white;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.alert {
+    padding: 12px;
+    background: #d8f3dc;
+    color: #155b32;
+    border: 1px solid #72b889;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    padding: 20px;
+    background: rgb(0 0 0 / 70%);
+    place-items: center;
+}
+
+.modal:target {
+    display: grid;
+}
+
+.modal-content {
+    max-width: 400px;
+    padding: 20px;
+    background: white;
+    color: #222;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #b45309;
+    outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+    .component-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .component-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #111827;
+        color: #f3f4f6;
+    }
+
+    .card,
+    .modal-content {
+        background: #1f2937;
+        color: #f3f4f6;
+    }
+
+    input,
+    select {
+        background: #1f2937;
+        color: white;
+        border: 1px solid #aaa;
+    }
+
+    .alert {
+        background: #153b2a;
+        color: #c6f6d5;
+    }
+}
